@@ -4,11 +4,7 @@ package com.bl.linkedlist;
 public class Node {
 	private int data ;
 	private Node next ;
-	
-	public Node(int data) {
-		super();
-		this.data = data;
-	}
+
 	public int getData() {
 		return data;
 	}
