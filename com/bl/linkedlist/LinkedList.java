@@ -90,6 +90,21 @@ public class LinkedList {
 			size--;
 		}
 	}
+
+	//method to insert after a given value
+	public void addAfterGivenValue(int prevValue , int value) {
+		Node  temp;
+		Node node = new Node();
+		node.setData(value);
+		temp = head ;
+		while(temp.getData() != prevValue) {
+			temp = temp.getNext();
+		}
+		node.setNext(temp.getNext());
+		temp.setNext(node);
+		size++;
+	}
+
 	//search method
 	public void searchValue(int val) {
 		int index = 0 ;
@@ -109,7 +124,7 @@ public class LinkedList {
 				temp = temp.getNext();
 			}
 			if(status == true) {
-				System.out.println("the elemnt "+val+" is present at index number "+index);
+				System.out.println("the element "+val+" is present at index number "+index);
 			}
 			else {
 				System.out.println("element is not present in the list");
@@ -142,6 +157,8 @@ public class LinkedList {
 
 		//adding data in node at a position 2
 		list.insertAtPos(2,30);
+
+		list.addAfterGivenValue(30, 40);
 
 		//displaying the added data in node
 		list.display();
