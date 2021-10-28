@@ -71,6 +71,27 @@ public class LinkedList {
 		size--;
 	}
 
+	// delete at last method
+	public void popAtLast() {
+		if(head == null) {
+			System.out.println("list is empty");
+		}
+		else if (size == 1) {
+			head = null;
+			size--;
+		}
+		else {
+			Node temp;
+			temp=head;
+			for(int i= 1 ; i < size-1;i++) {
+				temp=temp.getNext();
+			}
+			temp.setNext(null);
+			size--;
+		}
+	}
+
+
 	// display method
 	public void display() {
 		Node temp;
@@ -99,7 +120,7 @@ public class LinkedList {
 		//displaying the added data in node
 		list.display();
 		System.out.println("after deleting first element in linked list");
-		list.popAtFirst();
+		list.popAtLast();
 		list.display(); 
 	}
 
